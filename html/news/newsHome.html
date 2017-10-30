@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <title></title>
+	    <script src="../../js/mui.min.js"></script>
+	    <script src="../../js/iconfont.js" type="text/javascript" charset="utf-8"></script>
+	    <link href="../../css/mui.min.css" rel="stylesheet"/>
+	    <link rel="stylesheet" type="text/css" href="../../css/iconfont.css"/>
+	    <link rel="stylesheet" type="text/css" href="../../css/news/news.css"/>
+	    <script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript" charset="utf-8">
+	      	mui.init();
+	    </script>
+	</head>
+	<body>
+		<!-- 头部信息 -->
+		<header>
+			<span onclick="back()"><i class="iconfont icon-fanhui1"></i></span>
+			<span>消息</span>
+			<span id="toCalendar"><i class="iconfont icon-rili1"></i></span>
+		</header>
+		<!-- 导航 -->
+		<ul class="newsNav">
+			<li id="toLogistics">
+				<p style="background: #2AC845;">
+					<i class="iconfont icon-31daishouhuo"></i>
+					<span id="">12</span>
+				</p>
+				<p>物流</p>
+			</li>
+			<li id="toNotice">
+				<p style="background: #EC971F;">
+					<i class="iconfont icon-tixing"></i>
+					<span id="">20</span>
+				</p>
+				<p>通知</p>
+			</li>
+			<li id="toCoupon">
+				<p style="background: #d682a0;">
+					<i class="iconfont icon-youhuiquan"></i>
+					<span id="">6</span>
+				</p>
+				<p>优惠券</p>
+			</li>
+		</ul>
+		<!-- 消息列表 -->
+		<ul class="mui-table-view newsList" style="margin-top: 17px;">
+		    <li class="mui-table-view-cell mui-media">
+		        <a href="javascript:;">
+		            <img class="mui-media-object mui-pull-left" src="../../images/index/delicateVegetables.png">
+		            <div class="mui-media-body">
+		                                                 幸福
+		                <p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+		            </div>
+		          	<span id="">
+		               10月18号
+		            </span>
+		        </a>
+		        
+		    </li>
+		    <li class="mui-table-view-cell mui-media">
+		        <a href="javascript:;">
+		            <img class="mui-media-object mui-pull-left" src="../../images/index/hottwo01.png">
+		            <div class="mui-media-body">
+		                                                 木屋
+		                <p class='mui-ellipsis'>想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+		            </div>
+		            <span id="">
+		               10月18号
+		            </span>
+		        </a>
+		    </li>
+		    <li class="mui-table-view-cell mui-media">
+		        <a href="javascript:;">
+		            <img class="mui-media-object mui-pull-left" src="../../images/index/hottwo02.png">
+		            <div class="mui-media-body">
+		                CBD
+		                <p class='mui-ellipsis'>烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+		            </div>
+		            <span id="">
+		               10月18号
+		            </span>
+		        </a>
+		    </li>
+		</ul>
+		
+		<!-- js -->
+		<script type="text/javascript">
+			document.getElementById('toCalendar').addEventListener('tap', function() {
+			  //打开日历页面
+			  mui.openWindow({
+			    url: 'calendar.html', 
+			    id:'toCalendar'
+			  });
+			});
+			
+			document.getElementById('toLogistics').addEventListener('tap', function() {
+			  //打开物流页面
+			  mui.openWindow({
+			    url: 'newsContent.html', 
+			    id:'toLogistics',
+			    extras:{
+			       name:'toLogistics',
+			    }
+			  });
+			});
+			
+			document.getElementById('toNotice').addEventListener('tap', function() {
+			  //打开通知页面
+			  mui.openWindow({
+			    url: 'newsContent.html', 
+			    id:'toNotice',
+			    extras:{
+			       name:'toNotice',
+			    }
+			  });
+			});
+			
+			document.getElementById('toCoupon').addEventListener('tap', function() {
+			  //打开优惠券页面
+			  mui.openWindow({
+			    url: 'newsContent.html', 
+			    id:'toCoupon',
+			    extras:{
+			       name:'toCoupon',
+			    }
+			  });
+			});
+			
+		</script>
+	</body>
+</html>

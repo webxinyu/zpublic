@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <title></title>
+	    <script src="../../js/mui.min.js"></script>
+	    <script src="../../js/iconfont.js" type="text/javascript" charset="utf-8"></script>
+	    <link href="../../css/mui.min.css" rel="stylesheet"/>
+	    <link rel="stylesheet" type="text/css" href="../../css/iconfont.css"/>
+	    <link rel="stylesheet" type="text/css" href="../../css/news/news.css"/>
+	    <script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript" charset="utf-8">
+	      	mui.init();
+	    </script>
+	</head>
+	<body>
+		<!-- 头部信息 -->
+		<header>
+			<span onclick="back()"><i class="iconfont icon-fanhui1"></i></span>
+			<span>消息</span>
+			<span></span>
+		</header>
+		<!-- 导航 -->
+		<ul class="newsContentNav">
+			<li>
+				<p id="logistics">物流</p>
+			</li>
+			<li>
+				<p id="notice">通知</p>
+			</li>
+			<li>
+				<p id="coupon">优惠券</p>
+			</li>
+		</ul>
+		<!-- 消息列表 -->
+		<ul class="logisticsNews">
+			<li>
+				<p>2017-10-18 17:18</p>
+				<a>
+					<h5>您购买的水蜜桃发货了!</h5>
+					<dl>
+						<dt><img src="../../images/index/hotthree03.png"/></dt>
+						<dd>
+							<span>已发货</span>，您在<span>竹叶网自营生态园</span>购买的宝贝已经发货了，<span>点击查阅路线实况</span>&gt;&gt;
+						</dd>
+					</dl>
+				</a>
+			</li>
+			<li>
+				<p>2017-10-18 17:18</p>
+				<a>
+					<h5>您购买的水蜜桃发货了!</h5>
+					<dl>
+						<dt><img src="../../images/index/hotthree03.png"/></dt>
+						<dd>
+							<span>已发货</span>，您在<span>竹叶网自营生态园</span>购买的宝贝已经发货了，<span>点击查阅路线实况</span>&gt;&gt;
+						</dd>
+					</dl>
+				</a>
+			</li>
+		</ul>
+		
+		<!-- js -->
+		<script type="text/javascript">
+//			document.getElementById('toCalendar').addEventListener('tap', function() {
+//			  //打开日历页面
+//			  mui.openWindow({
+//			    url: 'calendar.html', 
+//			    id:'toCalendar'
+//			  });
+//			});
+			mui.plusReady(function(){
+				var self = plus.webview.currentWebview();
+				var name = self.name;
+				var logistics = document.getElementById("logistics");
+				var notice = document.getElementById("notice");
+				var coupon = document.getElementById("coupon");
+				if (name == "toLogistics") {
+					logistics.style.borderBottomColor = "#F00"; 
+				}
+				if (name == "toNotice") {
+					notice.style.borderBottomColor = "#F00"; 
+				}
+				if (name == "toCoupon") {
+					coupon.style.borderBottomColor = "#F00"; 
+				}
+			});
+
+		</script>
+	</body>
+</html>

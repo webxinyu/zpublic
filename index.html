@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <script src="js/iconfont.js" type="text/javascript" charset="utf-8"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/footer.css"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<!-- 头部 -->
+	<header>
+		<!-- 扫一扫 -->
+		<div class="scan" id="scan" onclick="clicked('barcode_scan.html',true,true)">
+			<p><span class="iconfont icon-saoyisao"></span></p>
+			<p>扫一扫</p>					
+		</div>
+		<!-- 搜索框 -->
+		<div class="mui-input-row mui-search">
+			<input type="search" class="mui-input-clear" placeholder="">
+		</div>
+		<!-- news -->
+		<div class="news" id="news">
+			<p><span class="mui-icon mui-icon-chat"></span></p>
+			<i id="newsSum" class="newsSum">10</i>
+			<p>消息</p>	
+		</div>
+	</header>
+	<!-- 轮播图 -->
+	<div class="mui-slider">
+	  <div class="mui-slider-group mui-slider-loop">
+	    <!--支持循环，需要重复图片节点-->
+	    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/banner4.png" /></a></div>
+	    <div class="mui-slider-item"><a href="#"><img src="images/banner1.png" /></a></div>
+	    <div class="mui-slider-item"><a href="#"><img src="images/banner2.png" /></a></div>
+	    <div class="mui-slider-item"><a href="#"><img src="images/banner3.png" /></a></div>
+	    <div class="mui-slider-item"><a href="#"><img src="images/banner4.png" /></a></div>
+	    <!--支持循环，需要重复图片节点-->
+	    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/banner1.png" /></a></div>
+	  </div>
+	  <!-- 索引 -->
+	  <div class="mui-slider-indicator">
+	  	
+	  </div>
+	</div>
+	<!-- 阶段性主题 -->
+	<section class="theme">
+		<img src="images/index/theme.jpg"/>
+	</section>
+	<!-- 分类导航 -->
+	<nav class="nav">
+		<ul class="navLsit">
+			<li id="toFruit">
+				<p style="background: #f3aa27;"><span class="iconfont icon-miaoxiansheng"></span></p>
+				<p>新鲜水果</p>
+			</li>
+			<li id="toVegetable">
+				<p style="background: #2AC845;"><span class="iconfont icon-ganxie"></span></p>
+				<p>优选蔬菜</p>
+			</li>
+			<li id="toCereals">
+				<p style="background: #dae43d;"><span class="iconfont icon-zaocan"></span></p>
+				<p>五谷杂粮</p>
+			</li>
+			<li>
+				<p style="background: #dc4d5a;"><span class="iconfont icon-guoneiyou"></span></p>
+				<p>农业旅游</p>
+			</li>
+			<li id="toLocalInformation">
+				<p style="background: #4db5dd;"><span class="iconfont icon-gonggao"></span></p>
+				<p>本地资讯</p>
+			</li>
+		</ul>
+		<ul class="navLsit">
+			<li id="toMicroShow">
+				<p style="background: #a02fe6;"><span class="iconfont icon-zhibojian"></span></p>
+				<p>微秀场</p>
+			</li>
+			<li>
+				<p style="background: #007AFF"><span class="iconfont icon-shuiguo"></span></p>
+				<p>果蔬外卖</p>
+			</li>
+			<li id="toRQ">
+				<p style="background: #c066c1;"><span class="iconfont icon-31daishouhuo"></span></p>
+				<p>肉禽</p>
+			</li>
+			<li>
+				<p style="background: #4CD964;"><span class="iconfont icon-31daifahuo"></span></p>
+				<p>我要租</p>
+			</li>
+			<li>
+				<p style="background: #FF5053;"><span class="iconfont icon-vrbofangqi"></span></p>
+				<p>VR果园</p>
+			</li>
+		</ul>
+	</nav>
+	<!-- 热门推荐 -->
+	<section class="hot">
+		<div class="hotTwo">
+			<a href="javascript:void(0);">
+				<dl>
+					<dt>
+						<h5>精品水果</h5>
+						<h6>新鲜可口的红富士</h6>
+					</dt>
+					<dd>
+						<img src="images/index/hottwo01.png"/>
+					</dd>
+				</dl>				
+			</a>
+			<a href="javascript:void(0);">
+				<dl>
+					<dt>
+						<h5>热门景点</h5>
+						<h6>竹叶网自营生态园</h6>
+					</dt>
+					<dd>
+						<img src="images/index/hottwo02.png"/>
+					</dd>
+				</dl>				
+			</a>
+		</div>
+		<div class="hotThree">
+			<a href="javascript:void(0);">
+				<dl>
+					<dt>
+						<h5>优质大豆</h5>
+						<h6>非转基因大豆</h6>
+					</dt>
+					<dd>
+						<img src="images/index/hotthree01.png"/>
+					</dd>
+				</dl>				
+			</a>
+			<a href="javascript:void(0);">
+				<dl>
+					<dt>
+						<h5>精选蔬菜</h5>
+						<h6>绿色无公害</h6>
+					</dt>
+					<dd>
+						<img src="images/index/hotthree02.png"/>
+					</dd>
+				</dl>				
+			</a>
+			<a href="javascript:void(0);">
+				<dl>
+					<dt>
+						<h5>水蜜桃</h5>
+						<h6>香甜水蜜桃</h6>
+					</dt>
+					<dd>
+						<img src="images/index/hotthree03.png"/>
+					</dd>
+				</dl>				
+			</a>
+		</div>
+	</section>
+	<!-- 优选水果 -->
+	<section class="preferredFruit">
+		<div class="preferredFruitTitle">
+			<img src="images/index/floor-tit.png"/>
+			<img src="images/index/preferredFruitTitle.jpg"/>
+		</div>
+		<div class="shopList">
+			<ul>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruit.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruit.png"/>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruit.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruit.png"/>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruitSmall.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruitSmall.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruitSmall.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruitSmall.png"/>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="activityads">
+			<img src="images/index/preferredFruitads.jpg"/>
+		</div>
+	</section>
+	
+		<!-- 精美蔬菜 -->
+	<section class="preferredFruit">
+		<div class="preferredFruitTitle">
+			<img src="images/index/floor-tit.png"/>
+			<img src="images/index/delicateVegetables.jpg"/>
+		</div>
+		<div class="shopList">
+			<ul>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/delicateVegetables.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/delicateVegetables.png"/>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/delicateVegetables.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/delicateVegetables.png"/>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/delicateVegetablesSmall.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/delicateVegetablesSmall.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/delicateVegetablesSmall.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/delicateVegetablesSmall.png"/>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="activityads">
+			<img src="images/index/preferredFruitads02.jpg"/>
+		</div>
+	</section>
+	
+		<!-- 五谷杂粮 -->
+	<section class="preferredFruit">
+		<div class="preferredFruitTitle">
+			<img src="images/index/floor-tit.png"/>
+			<img src="images/index/cereals.jpg"/>
+		</div>
+		<div class="shopList">
+			<ul>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/celeals.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/celeals.png"/>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/celeals.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/celeals.png"/>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/celealsSmall.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/celealsSmall.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/celealsSmall.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/celealsSmall.png"/>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="activityads">
+			<img src="images/index/preferredFruitads03.jpg"/>
+		</div>
+	</section>
+	
+		<!-- 农业旅游 -->
+	<section class="preferredFruit">
+		<div class="preferredFruitTitle">
+			<img src="images/index/floor-tit.png"/>
+			<img src="images/index/agritourism.jpg"/>
+		</div>
+		<div class="shopList">
+			<ul>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruit.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruit.png"/>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruit.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruit.png"/>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruitSmall.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruitSmall.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruitSmall.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="leftTitle">
+							<h5>新鲜水果</h5>
+							<h6>酸甜可口的水果</h6>
+						</div>
+						<div class="rightImg">
+							<img src="images/index/preferredFruitSmall.png"/>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="activityads">
+			<img src="images/index/preferredFruitads04.jpg"/>
+		</div>
+	</section>
+	
+	<!-- 微秀场 -->
+	<section class="microShow">
+		<div class="microShowTitle">
+			<img src="images/index/floor-tit.png"/>
+			<img src="images/index/microShow.jpg"/>
+			<a href="javascript:void(0);">更多精彩&nbsp;<b>&gt;</b></a>
+		</div>
+		<div class="showList">
+			<ul>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="topTitle">
+							<h4>旅游感悟&nbsp;&nbsp;<span>微秀场<i class="iconfont icon-bofang"></i></span></h4>
+							<h6>每一段旅行都是人生的一种修行</h6>
+						</div>
+						<div class="showTime">
+							<img src="images/index/microShow01.png"/>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<div class="topTitle">
+							<h4>旅游感悟&nbsp;&nbsp;<span>微秀场<i class="iconfont icon-bofang"></i></span></h4>
+							<h6>每一段旅行都是人生的一种修行</h6>
+						</div>
+						<div class="showTime">
+							<img src="images/index/microShow02.png"/>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+	
+	<!-- 底部导航 -->
+	<footer class="footerTab">
+		<a href="javascript:void(0);">
+			<span style="color: #2AC845;"><i class="iconfont icon-shouye"></i></span>
+			<span style="color: #2AC845;">首页</span>
+		</a>
+		<a href="javascript:void(0);">
+			<span><i class="iconfont icon-zhinan"></i></span>
+			<span>发现</span>
+		</a>
+		<a href="javascript:void(0);">
+			<span><i class="iconfont icon-wodedingdan"></i></span>
+			<span>订单</span>
+		</a>
+		<a href="javascript:void(0);" id="toPersonal">
+			<span><i class="iconfont icon-wode"></i></span>
+			<span>我的</span>
+		</a>
+	</footer>
+	<!--js-->
+	<script type="text/javascript">
+		//获得slider插件对象
+		var gallery = mui('.mui-slider');
+		gallery.slider({
+		  interval:3000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+		//tap为mui封装的单击事件，可参考手势事件章节
+		document.getElementById('scan').addEventListener('tap', function() {
+		  //打开扫一扫页面
+		  mui.openWindow({
+		    url: 'html/barcode_scan.html', 
+		    id:'scan'
+		  });
+		});
+		document.getElementById('news').addEventListener('tap', function() {
+		  //打开扫一扫页面
+		  mui.openWindow({
+		    url: 'html/news/newsHome.html', 
+		    id:'news'
+		  });
+		});
+		document.getElementById('toVegetable').addEventListener('tap', function() {
+		  //打开新蔬菜页面
+		  mui.openWindow({
+		    url: 'html/fruit/fruitIndex.html', 
+		    id:'toVegetable',
+		    extras:{
+		       name:'toVegetable',
+		    }
+		  });
+		});
+		document.getElementById('toFruit').addEventListener('tap', function() {
+		  //打开新鲜水果页面
+		  mui.openWindow({
+		    url: 'html/fruit/fruitIndex.html', 
+		    id:'toFruit',
+		    extras:{
+		       name:'toFruit',
+		    }
+		  });
+		});
+		document.getElementById('toCereals').addEventListener('tap', function() {
+		  //打开五谷杂粮页面
+		  mui.openWindow({
+		    url: 'html/fruit/fruitIndex.html', 
+		    id:'toCereals',
+		    extras:{
+		       name:'toCereals',
+		    }
+		  });
+		});
+		document.getElementById('toRQ').addEventListener('tap', function() {
+		  //打开肉禽页面
+		  mui.openWindow({
+		    url: 'html/fruit/fruitIndex.html', 
+		    id:'toRQ',
+		    extras:{
+		       name:'toRQ',
+		    }
+		  });
+		});
+		document.getElementById('toLocalInformation').addEventListener('tap', function() {
+		  //打开本地资讯页面
+		  mui.openWindow({
+		    url: 'html/localInformation/localInformation.html', 
+		    id:'toLocalInformation'
+		  });
+		});
+		document.getElementById('toMicroShow').addEventListener('tap', function() {
+		  //打开微秀场页面
+		  mui.openWindow({
+		    url: 'html/microShow/microShow.html', 
+		    id:'toMicroShow'
+		  });
+		});
+		
+		/* 底部tab切换 */
+		document.getElementById('toPersonal').addEventListener('tap', function() {
+		  //打开微秀场页面
+		  mui.openWindow({
+		    url: 'html/home/home.html', 
+		    id:'toPersonal'
+		  });
+		});
+		
+	</script>
+	<script type="text/javascript">
+		mui.plusReady(function() {
+		    //读取本地存储，检查是否为首次启动
+		    var showGuide = plus.storage.getItem("lauchFlag");
+		    if(showGuide){
+		        //有值，说明已经显示过了，无需显示
+		    }else{
+		        //显示启动导航
+		        mui.openWindow({
+		            id:'guide',
+		            url:'html/home/subpage/currency/guide.html'
+		        });
+		    }
+		});
+		// H5 plus事件处理
+		function plusReady(){
+			// 设置系统状态栏背景为红色
+			plus.navigator.setStatusBarBackground('#2AC845');
+		}
+		if(window.plus){
+			plusReady();
+		}else{
+			document.addEventListener('plusready', plusReady, false);
+		}
+		
+</script>
+</body>
+</html>

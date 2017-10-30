@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>设置</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/home/setUp.css"/>
+	</head>
+	<body>
+		<header class="setUpHeader">
+			<span onclick="back()"><i class="iconfont icon-fanhui1"></i></span>
+			<span>设置</span>
+			<span></span>
+		</header>
+		<ul class="mui-table-view">
+		    <li class="mui-table-view-cell">
+		        <a class="mui-navigate-right" id="toMyInformation">个人信息</a>
+		    </li>
+		    <li class="mui-table-view-cell">
+		        <a class="mui-navigate-right" id="toChangingBindings">
+		        	换绑手机
+		        	<span class="setPersonal" id="">
+			        	132****0937
+			        </span>
+		        </a>
+		    </li>
+		    <li class="mui-table-view-cell">
+		        <a class="mui-navigate-right" id="toChangePassword">
+		        	设置密码
+		        	<span class="setPersonal" id="">
+			        	修改
+			        </span>
+		        </a>
+		    </li>
+		</ul>
+		<ul class="mui-table-view">
+		    <li class="mui-table-view-cell">
+		        <a class="mui-navigate-right">安全中心</a>
+		    </li>
+		    <li class="mui-table-view-cell">
+		        <a class="mui-navigate-right" id="toCurrency">通用</a>
+		    </li>
+		</ul>
+		<section class="exitCurrentAccount">
+			<input type="button" name="" id="" value="退出当前账户" />
+		</section>	
+	</body>
+	<script src="../../../js/mui.min.js"></script>
+	<script src="../../../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		document.getElementById('toMyInformation').addEventListener('tap', function() {
+			//打开首页
+			mui.openWindow({
+			    url: 'myInformation/myInformation.html', 
+			    id:'toMyInformation',
+			});
+		});
+		document.getElementById('toChangingBindings').addEventListener('tap', function() {
+			//打开换绑手机号
+			mui.openWindow({
+			    url: 'changeingBindings/changingBindings.html', 
+			    id:'toChangingBindings',
+			});
+		});
+		document.getElementById('toChangePassword').addEventListener('tap', function() {
+			//打开修改密码
+			mui.openWindow({
+			    url: 'changePassword/changePassword.html', 
+			    id:'toChangePassword',
+			});
+		});
+		document.getElementById('toCurrency').addEventListener('tap', function() {
+			//打开修改密码
+			mui.openWindow({
+			    url: 'currency/currency.html', 
+			    id:'toCurrency',
+			});
+		});
+		
+	</script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>收藏夹</title>
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../../../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../../../css/iconfont.css"/>
+		<style type="text/css">
+			html,body {
+				background: #FcFcFc;
+			}
+			ul,li {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			.setUpHeader {
+				height: 45px;
+				border-bottom: 1px #eee solid;
+				background: #fff;
+				display: flex;
+				margin-bottom: 17px;
+				box-shadow: 0px 5px 5px #eee;
+			}
+			.setUpHeader>span {
+				height: 44px;
+				line-height: 44px;
+				text-align: center;
+			}
+			.setUpHeader>span:nth-of-type(1), {
+				flex: 1;
+			}
+			.setUpHeader>span:nth-of-type(2) {
+				flex: 5;
+			}
+			.setUpHeader>span:nth-of-type(1)>.iconfont {
+				font-size: 24px;
+			}
+			.setUpHeader>span:nth-of-type(3) {
+				flex: 1;
+			}
+			.typePage {
+				padding: 10px;
+				background: #fff;
+			}
+			.mui-media-body {
+				text-align: left;
+			}
+			.price {
+				color: #D0283E;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="setUpHeader">
+			<span onclick="back()"><i class="iconfont icon-fanhui1"></i></span>
+			<span>收藏夹</span>
+			<span></span>
+		</header>
+		<div class="mui-content" style="background-color:#fff">
+		    <ul class="mui-table-view mui-grid-view">
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="../../../../images/home/shuijiao.jpg">
+		                <div class="mui-media-body">幸福就是可以一起睡觉</div>
+		                <div class="mui-media-body"><span class="price">&yen;6.66</span></div>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="../../../../images/home/muwu.jpg">
+		                <div class="mui-media-body">想要一间这样的木屋，静静的喝咖啡</div>
+		                <div class="mui-media-body"><span class="price">&yen;6.66</span></div>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#"><img class="mui-media-object" src="../../../../images/home/cbd.jpg">
+		                <div class="mui-media-body">Color of SIP CBD</div>
+		                <div class="mui-media-body"><span class="price">&yen;6.66</span></div>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="../../../../images/home/yuantiao.jpg">
+		                <div class="mui-media-body">静静看这世界</div>
+		                <div class="mui-media-body"><span class="price">&yen;6.66</span></div>
+		            </a>
+		        </li>
+		    </ul>    
+		</div>
+
+	</body>
+	<script src="../../../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+	</script>
+</html>
