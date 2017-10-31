@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>售后申请</title>
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../../../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../../../css/iconfont.css"/>
+		<style type="text/css">
+			html,body {
+				background: #FcFcFc;
+			}
+			ul,li {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			.setUpHeader {					/* 标题 */
+				height: 45px;
+				border-bottom: 1px #eee solid;
+				background: #fff;
+				display: flex;
+				position: fixed;
+				top: 0;
+				width: 100%;
+			}
+			.setUpHeader>span {
+				height: 44px;
+				line-height: 44px;
+				text-align: center;
+			}
+			.setUpHeader>span:nth-of-type(1), {
+				flex: 1;
+			}
+			.setUpHeader>span:nth-of-type(2) {
+				flex: 5;
+			}
+			.setUpHeader>span:nth-of-type(1)>.iconfont {
+				font-size: 24px;
+			}
+			.setUpHeader>span:nth-of-type(3) {
+				flex: 1;
+			}
+			.setUpHeader>span:nth-of-type(3)>.iconfont {
+				font-size: 24px;
+			}
+			.nav {									/* 导航 */
+				height: 45px;
+				line-height: 45px;
+				display: flex;
+				position: fixed;
+				width: 100%;
+				border-bottom: 1px #ccc solid;
+				background: #fff;
+				top: 45px;
+			}
+			.nav>span:nth-of-type(1),
+			.nav>span:nth-of-type(4) {
+				flex: 1;
+				text-align: center;
+			}
+			.nav>span:nth-of-type(4)>.iconfont {
+				font-size: 20px;
+				color: #999;
+			}
+			.nav>span:nth-of-type(2),
+			.nav>span:nth-of-type(3) {
+				flex: 2;
+				text-align: center;
+			}
+			.nav>span:nth-of-type(2)>b,
+			.nav>span:nth-of-type(3)>b {
+				line-height: 44px;
+				display: inline-block;
+				font-weight: normal;
+			}
+			.nav>span:nth-of-type(2)>b {
+				border-bottom: 2px #f00 solid;
+				color: #f00;
+			}
+			section {							/* 售后商品列表 */
+				padding-top: 90px;
+				background: #F1F1F1;
+			}
+			section>ul li {
+				margin-top: 17px;
+				background: #fff;
+			}
+			.saleInformation {
+				height: 30px;
+				line-height: 30px;
+				padding: 0 10px;
+				font-size: 12px;
+				border-bottom: 1px #eee solid;
+			}
+			.shopDetail {
+				height: 80px;
+				padding: 10px;
+				display: flex;
+			}
+			.shopDetailImg {
+				flex: 1;
+			}
+			.shopDetailText {
+				flex: 3;
+			}
+			.shopDetailText>p {
+				margin-bottom: 0;
+			}
+			.shopDetailText>p:nth-of-type(1) {
+				color: #333;
+				word-break: break-all;
+			    text-overflow: ellipsis;
+			    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+			    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+			    -webkit-line-clamp: 2; /** 显示的行数 **/
+			    overflow: hidden;  /** 隐藏超出的内容 **/
+			}
+			.shopDetailText>p:nth-of-type(2) {
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+			.ApplyForAfterSale {
+				height: 40px;
+				display: flex;
+				padding: 0 10px;
+			}
+			.ApplyForAfterSale>.tips {
+				flex: 1;
+			}
+			.ApplyForAfterSale>.tips>p {		/* 是否可以申请售后 */
+				height: 40px;
+				line-height: 40px;
+				font-size: 12px;
+			}
+			.ApplyForAfterSale>.sale {
+				flex: 1;
+				text-align: right;
+				padding: 5px 0;
+			}
+			.ApplyForAfterSale>.sale>span {
+				display: inline-block;
+				height: 30px;
+				line-height: 30px;
+				color: #f00;
+				border: 1px #f00 solid;
+				font-size: 14px;
+				width: 80px;
+				text-align: center;
+				border-radius: 3px;
+			}
+	</style>
+	</head>
+	<body>
+		<header class="setUpHeader">
+			<span onclick="back()"><i class="iconfont icon-fanhui1"></i></span>
+			<span>售后申请</span>
+			<span><i class="iconfont icon-gengduo1"></i></span>
+		</header>
+		<nav class="nav">
+			<span></span>
+			<span><b>售后申请</b></span>
+			<span><b>申请记录</b></span>
+			<span><i class="iconfont icon-gouwurili"></i></span>			
+		</nav>
+		<section>
+			<!-- 售后申请 -->
+			<ul>
+				<li>
+					<p class="saleInformation">
+						订单编号：<span>640084822705</span>
+						下单时间：<span>2017-10-28 12:07:03</span>
+					</p>
+					<div class="shopDetail">
+						<div class="shopDetailImg">
+							<img style="height: 60px;width: 60px;" src="../../../../images/home/cbd.jpg"/>
+						</div>
+						<div class="shopDetailText">
+							<p>史蒂夫 是降低房是大家覅撒娇的设计的覅纠纷双方将 设计费是降低房 水果姐四个角 个鸡尾酒额</p>
+							<p>数量<span>1</span></p>
+						</div>
+					</div>
+					<div class="ApplyForAfterSale">
+						<div class="tips">
+							<p>该商品以申请售后&nbsp;&gt;</p>
+							<p style="display: none;">该商品已超过售后期&nbsp;<i class="iconfont icon-warn"></i></p>								
+						</div>
+						<div class="sale">
+							<span id="saleBtn">申请售后</span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<p class="saleInformation">
+						订单编号：<span>640084822705</span>
+						下单时间：<span>2017-10-28 12:07:03</span>
+					</p>
+					<div class="shopDetail">
+						<div class="shopDetailImg">
+							<img style="height: 60px;width: 60px;" src="../../../../images/home/muwu.jpg"/>
+						</div>
+						<div class="shopDetailText">
+							<p>史蒂夫 是降低房是大家覅撒娇的设计的覅纠纷双方将 设计费是降低房 水果姐四个角 个鸡尾酒额</p>
+							<p>数量<span>1</span></p>
+						</div>
+					</div>
+					<div class="ApplyForAfterSale">
+						<div class="tips">
+							<p>该商品以申请售后&nbsp;&gt;</p>
+							<p style="display: none;">该商品已超过售后期&nbsp;<i class="iconfont icon-warn"></i></p>								
+						</div>
+						<div class="sale">
+							<span id="saleBtn">申请售后</span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<p class="saleInformation">
+						订单编号：<span>640084822705</span>
+						下单时间：<span>2017-10-28 12:07:03</span>
+					</p>
+					<div class="shopDetail">
+						<div class="shopDetailImg">
+							<img style="height: 60px;width: 60px;" src="../../../../images/home/yuantiao.jpg"/>
+						</div>
+						<div class="shopDetailText">
+							<p>史蒂夫 是降低房是大家覅撒娇的设计的覅纠纷双方将 设计费是降低房 水果姐四个角 个鸡尾酒额</p>
+							<p>数量<span>1</span></p>
+						</div>
+					</div>
+					<div class="ApplyForAfterSale">
+						<div class="tips">
+							<p>该商品以申请售后&nbsp;&gt;</p>
+							<p style="display: none;">该商品已超过售后期&nbsp;<i class="iconfont icon-warn"></i></p>								
+						</div>
+						<div class="sale">
+							<span id="saleBtn">申请售后</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<!-- 申请记录 -->
+			<ul>
+				<li></li>
+			</ul>
+		</section>
+	</body>
+	<script src="../../../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../js/common.js" type="text/javascript" charset="utf-8"></script>
+</html>
