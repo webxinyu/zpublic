@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/home/home.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/footer.css"/>
+	</head>
+
+	<body>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				
+				<!-- content begin -->
+				<!-- 个人信息 -->
+				<div class="personalInformation" id="personalInformation">
+					<div class="headSculpture">
+						<img src="../../images/index/hottwo01.png"/>
+					</div>
+					<div class="information">
+						<p><span>webxinyu</span><i class="iconfont icon-liwu"></i></p>
+						<p>个人信息&gt;</p>
+					</div>
+				</div>
+				<!-- 搜藏  评价  清单 -->
+				<ul class="topNav">
+					<li id="toFavorite">
+						<p><i class="iconfont icon-shoucang"></i></p>
+						<p>收藏</p>
+					</li>
+					<li id="toStore">
+						<p><i class="iconfont icon-dianpu1"></i></p>
+						<p>关注店铺</p>
+					</li>
+					<li>
+						<p><i class="iconfont icon-zuji"></i></p>
+						<p>足迹</p>
+					</li>
+				</ul>
+				<section class="myOrder">
+					<h2>
+						我的订单
+						<span id="" class="moreOrders">
+							查看更多订单&nbsp;&nbsp;&gt;
+						</span>
+					</h2>
+					<ul>
+						<li id="toObligation">
+							<p>
+								<i class="iconfont icon-31daifukuan"></i>
+								<b>2</b>
+							</p>
+							<p>待付款</p>
+						</li>
+						<li>
+							<p>
+								<i class="iconfont icon-31daifahuo"></i>
+								<b>2</b>
+							</p>
+							<p>待发货</p>
+						</li>
+						<li>
+							<p>
+								<i class="iconfont icon-31daishouhuo"></i>
+								<b>2</b>
+							</p>
+							<p>待收货</p>
+						</li>
+						<li>
+							<p>
+								<i class="iconfont icon-evaluate_fill"></i>
+								<b>2</b>
+							</p>
+							<p>待评价</p>
+						</li>
+						<li>
+							<p>
+								<i class="iconfont icon-tuikuan"></i>
+								<b>2</b>
+							</p>
+							<p>退款/售后</p>
+						</li>
+					</ul>
+				</section>
+				
+				<section class="tools">
+					<h2>
+						必备工具
+						<span id="" class="moretools">
+							查看全部工具&nbsp;&nbsp;&gt;
+						</span>
+					</h2>
+					<ul>
+						<li>
+							<p>
+								<i style="color: #EC971F;" class="iconfont icon-youhuiquan"></i>
+							</p>
+							<p>卡券包</p>
+						</li>
+						<li>
+							<p>
+								<i style="color: #CF2D28;" class="iconfont icon-huiyuanqia"></i>
+							</p>
+							<p>会员中心</p>
+						</li>
+						<li>
+							<p>
+								<i style="color: #007AFF;" class="iconfont icon-list"></i>
+							</p>
+							<p>我的话题</p>
+						</li>
+						<li>
+							<p>
+								<i style="color: #6641E2;" class="iconfont icon-31daipingjia"></i>
+							</p>
+							<p>我的评价</p>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<p>
+								<i style="color: #e2415d;" class="iconfont icon-friend"></i>
+							</p>
+							<p>我要合作</p>
+						</li>
+						<li>
+							<p>
+								<i style="color: #4e56c1;" class="iconfont icon-kefu"></i>
+							</p>
+							<p>客户服务</p>
+						</li>
+						<li>
+							<p>
+								<i style="color: #5eb954;" class="iconfont icon-bangzhuzhongxin"></i>
+							</p>
+							<p>关于竹叶</p>
+						</li>
+						<li>
+							<p>
+								<i style="color: #777;" class="iconfont icon-more"></i>
+							</p>
+							<p>更多</p>
+						</li>
+					</ul>
+				</section>
+				<!-- content end -->		
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						callback: pulldownRefresh
+					}
+				}
+			});
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				}, 1500);
+			}
+
+//			if (mui.os.plus) {
+//				mui.plusReady(function() {
+//					setTimeout(function() {
+//						mui('#pullrefresh').pullRefresh().pullupLoading();
+//					}, 10);
+//
+//				});
+//			} else {
+//				mui.ready(function() {
+//					mui('#pullrefresh').pullRefresh().pullupLoading();
+//				});
+//			}
+		</script>
+		<script type="text/javascript">
+			/* 页面跳转 */
+			document.getElementById('toFavorite').addEventListener('tap', function() {
+				//打开收藏夹页
+				mui.openWindow({
+				    url: 'subpage/favorite/favorite.html', 
+				    id:'toFavorite',
+				});
+			});
+			document.getElementById('toStore').addEventListener('tap', function() {
+				//打开店铺关注页
+				mui.openWindow({
+				    url: 'subpage/store.html', 
+				    id:'toStore',
+				});
+			});
+			/*打开我的订单页面*/
+			document.getElementById('toObligation').addEventListener('tap', function() {
+				mui.openWindow({
+				    url: 'subpage/myorders/myOrders.html', 
+				    id:'toObligation',
+				});
+			});
+			/*打开我的订单页面*/
+			document.getElementById('personalInformation').addEventListener('tap', function() {
+				mui.openWindow({
+				    url: 'subpage/myInformation/myInformation.html', 
+				    id:'personalInformation',
+				});
+			});
+			
+			
+		</script>
+	</body>
+
+</html>

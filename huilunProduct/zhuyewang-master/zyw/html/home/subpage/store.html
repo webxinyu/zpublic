@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>我的关注</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../../../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/iconfont.css"/>
+		<style type="text/css">
+			.mui-content>.mui-table-view:first-child {
+				margin-top: -1px;
+			}
+			html,body {
+				background: #FcFcFc;
+			}
+			ul,li {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			.setUpHeader {
+				height: 45px;
+				border-bottom: 1px #eee solid;
+				background: #fff;
+				display: flex;
+				margin-bottom: 17px;
+				box-shadow: 0px 5px 5px #eee;
+			}
+			.setUpHeader>span {
+				height: 44px;
+				line-height: 44px;
+				text-align: center;
+			}
+			.setUpHeader>span:nth-of-type(1), {
+				flex: 1;
+			}
+			.setUpHeader>span:nth-of-type(2) {
+				flex: 5;
+			}
+			.setUpHeader>span:nth-of-type(1)>.iconfont {
+				font-size: 24px;
+			}
+			.setUpHeader>span:nth-of-type(3) {
+				flex: 1;
+			}
+			.mui-media-body {
+				color: #333;
+			}
+			.mui-navigate-right:after, .mui-push-right:after {
+				font-weight: bolder;
+				content: "";
+			}
+			.mui-table-view-cell {
+				padding-right: 30px;
+			}
+			.delBtn {
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				margin-top: -20px;
+				display: block;
+				height: 40px;
+				width: 30px;
+				line-height: 40px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="setUpHeader">
+			<span onclick="back()"><i class="iconfont icon-fanhui1"></i></span>
+			<span>我的关注</span>
+			<span></span>
+		</header>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content">
+			<!--数据列表-->
+			<div class="mui-content">
+			<ul id="OA_task_1" class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">取消关注</a>
+					</div>
+					<div class="mui-slider-handle">
+						<a class="mui-navigate-right">
+							<img class="mui-media-object mui-pull-left" src="../../../images/index/preferredFruit.png">
+							<div class="mui-media-body">
+								周大福珠宝
+								<p class='mui-ellipsis'>企业店铺</p>
+							</div>
+						</a>
+					</div>
+<!--					<span id="delBtn" class="delBtn"><i class="iconfont icon-more"></i></span>-->
+				</li>
+			</ul>
+			<ul id="OA_task_1" class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">取消关注</a>
+					</div>
+					<div class="mui-slider-handle">
+						<a class="mui-navigate-right">
+							<img class="mui-media-object mui-pull-left" src="../../../images/index/preferredFruit.png">
+							<div class="mui-media-body">
+								渝荣副食店
+								<p class='mui-ellipsis'>黄钻店铺</p>
+							</div>
+						</a>
+					</div>
+					<!--<span id="delBtn" class="delBtn"><i class="iconfont icon-more"></i></span>-->
+				</li>
+			</ul>
+			<ul id="OA_task_1" class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">取消关注</a>
+					</div>
+					<div class="mui-slider-handle">
+						<a class="mui-navigate-right">
+							<img class="mui-media-object mui-pull-left" src="../../../images/index/preferredFruit.png">
+							<div class="mui-media-body">
+								生态农业园
+								<p class='mui-ellipsis'>好评率高</p>
+							</div>
+						</a>
+					</div>
+					<!--<span id="delBtn" class="delBtn"><i class="iconfont icon-more"></i></span>-->
+				</li>
+			</ul>
+		</div>
+			<!--<ul class="mui-table-view mui-table-view-chevron"></ul>-->
+		</div>
+		<script src="../../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						style:'circle',
+						callback: pulldownRefresh
+					},
+					up: {
+						auto:true,
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+			
+			/* 上啦加载具体业务实现 */
+			function pullupRefresh() {
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().endPullup(); //参数为true代表没有更多数据了。
+					mui.toast("加载完成");
+				}, 1500);
+			}
+
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().endPulldown();
+					mui.toast("刷新成功");
+				}, 1500);
+			}
+
+		</script>
+		<script>
+			mui.init();
+			(function($) {
+				//$.swipeoutOpen(el,direction)//打开指定列的滑动菜单，el:指定列的dom对象，direction：取值left|right，指定打开的是左侧或右侧滑动菜单
+				//$.swipeoutClose(el);//关闭指定列的滑动菜单，el:指定列的dom对象
+				//				setTimeout(function() {
+				//					$.swipeoutOpen(document.getElementById("OA_task_1").querySelector('li:last-child'), 'left');
+				//					setTimeout(function() {
+				//						$.swipeoutClose(document.getElementById("OA_task_1").querySelector('li:last-child'));
+				//					}, 1000);
+				//				}, 1000);
+				//第一个demo，拖拽后显示操作图标，点击操作图标删除元素；
+				$('.mui-table-view').on('tap', '.mui-btn', function(event) {
+					var elem = this;
+					var li = elem.parentNode.parentNode;
+					mui.confirm('确认取消此关注？', '竹叶网', btnArray, function(e) {
+						if (e.index == 0) {
+							li.parentNode.removeChild(li);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(li);
+							}, 0);
+						}
+					});
+				});
+				var btnArray = ['确认', '取消'];
+			})(mui);
+		</script>
+	</body>
+
+</html>

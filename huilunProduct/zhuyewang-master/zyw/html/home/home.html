@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/home/home.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/footer.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="box-shadow: none;margin: 0;">
+			<span></span>
+			<span id="toSetUp"><i class="iconfont icon-settings"></i></span>
+			<span id="tonews"><i class="iconfont icon-noticefill"></i></span>
+		</header>
+		
+		<div class="mui-content">
+			
+		</div>
+			<!-- 底部导航 -->
+	<footer class="footerTab">
+		<a id="toIndex" href="javascript:void(0);">
+			<span><i class="iconfont icon-shouye"></i></span>
+			<span>首页</span>
+		</a>
+		<a href="javascript:void(0);">
+			<span><i class="iconfont icon-kanguo"></i></span>
+			<span>发现</span>
+		</a>
+		<a href="javascript:void(0);">
+			<span><i class="iconfont icon-wodedingdan"></i></span>
+			<span>订单</span>
+		</a>
+		<a href="javascript:void(0);" id="toPersonal">
+			<span style="color: #2AC845;"><i class="iconfont icon-wode"></i></span>
+			<span style="color: #2AC845;">我的</span>
+		</a>
+	</footer>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript">
+		//启用双击监听
+		mui.init({
+			gestureConfig:{
+				doubletap:true
+			},
+			subpages:[{
+				url:'home_main.html',
+				id:'home_main.html',
+				styles:{
+					top: '45px',
+					bottom: '45px',
+				}
+			}]
+		});
+	
+		var contentWebview = null;
+		document.querySelector('header').addEventListener('doubletap',function () {
+			if(contentWebview==null){
+				contentWebview = plus.webview.currentWebview().children()[0];
+			}
+			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
+		});
+	</script>
+	<script type="text/javascript">
+		document.getElementById('toIndex').addEventListener('tap', function() {
+			//打开首页
+			mui.openWindow({
+			    url: '../../index.html', 
+			    id:'toIndex',
+			    extras:{
+			       name:'toIndex',
+			    }
+			});
+		});
+		document.getElementById('toSetUp').addEventListener('tap', function() {
+			//打开首页
+			mui.openWindow({
+			    url: 'subpage/setUp.html', 
+			    id:'toSetUp',
+			});
+		});
+		document.getElementById('tonews').addEventListener('tap', function() {
+			//打开首页
+			mui.openWindow({
+			    url: '../news/newsHome.html', 
+			    id:'tonews',
+			});
+		});
+		
+	</script>
+</html>

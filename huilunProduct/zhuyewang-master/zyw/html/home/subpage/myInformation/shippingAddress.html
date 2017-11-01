@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的收货地址</title>
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../../../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../../../css/iconfont.css"/>
+		<style type="text/css">
+			html,body{
+				background: #F1F1F1;
+			}
+			.setUpHeader {						/* 头部 */
+				height: 45px;
+				border-bottom: 1px #c8c7cc solid;
+				background: #fff;
+				display: flex;
+				margin-bottom: 17px;
+			}
+			.setUpHeader>span {
+				height: 44px;
+				line-height: 44px;
+				text-align: center;
+			}
+			.setUpHeader>span:nth-of-type(1), {
+				flex: 1;
+			}
+			.setUpHeader>span:nth-of-type(2) {
+				flex: 2;
+			}
+			.setUpHeader>span:nth-of-type(1)>.iconfont {
+				font-size: 24px;
+			}
+			.setUpHeader>span:nth-of-type(3) {
+				flex: 4;
+			}				
+			.newAddress {						/* 底部 */
+				height: 45px;
+				width: 100%;
+				position: fixed;
+				bottom: 0;
+				line-height: 45px;
+				text-align: center;
+				color: #fff;
+				background: #2AC845;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="setUpHeader">
+			<span onclick="back()"><i class="iconfont icon-fanhui1"></i></span>
+			<span>我的收货地址</span>
+			<span></span>
+		</header>
+		<!-- 内容区 -->
+		<section class="addressCotain">
+			
+		</section>
+		<footer class="newAddress" id="toNewAddress">新建收货地址</footer>
+	</body>
+	<script src="../../../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		document.getElementById('toNewAddress').addEventListener('tap', function() {
+			//打开新建收货地址
+			mui.openWindow({
+			    url: 'newAddress.html', 
+			    id:'toNewAddress',
+			});
+		});
+	</script>
+</html>

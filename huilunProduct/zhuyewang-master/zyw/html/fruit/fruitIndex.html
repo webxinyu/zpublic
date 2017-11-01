@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    	<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+    	<title></title>
+    	<script src="../../js/mui.min.js"></script>
+    	<script src="../../js/iconfont.js" type="text/javascript" charset="utf-8"></script>
+    	<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+    	<link href="../../css/mui.min.css" rel="stylesheet"/>
+    	<link rel="stylesheet" type="text/css" href="../../css/iconfont.css"/>
+    	<link rel="stylesheet" type="text/css" href="../../css/fruit/fruitIndex.css"/>
+    	<script type="text/javascript">
+    		mui.init({
+			    gestureConfig:{
+				    tap: true, //默认为true
+				    doubletap: true, //默认为false
+				    longtap: true, //默认为false
+				    swipe: true, //默认为true
+				    drag: true, //默认为true
+				    hold:false,//默认为false，不监听
+				    release:false//默认为false，不监听
+			    }
+			});
+    	</script>
+		<title>新鲜水果</title>
+	</head>
+	<body>
+		<header>
+			<span onclick="back()"><i class="iconfont icon-fanhui1"></i></span>
+			<span></span>
+			<span>新鲜水果</span>
+			<span>
+				<i class="iconfont icon-tianmaochaoshigouwuche"></i>
+				<b>10</b>
+			</span>
+			<span id="openMore">
+				<i class="iconfont icon-gengduo1"></i>
+				<b>2</b>
+				<div class="moreContain" id="moreContain" style="display: none;">
+					<ul class="more" id="more">
+						<li id="toNewsHome">
+							<span>
+								<i class="iconfont icon-xiaoxi1"></i>
+								<b>2</b>
+							</span>
+							消息
+						</li>
+						<li id="toIndex"><span><i class="mui-icon mui-icon-home"></i></span>首页</li>
+						<li id="toCalendar"><span><i class="iconfont icon-rili"></i></span>日历</li>
+						<li id="share" onclick="shareSystem()"><span><i class="iconfont icon-fenxiang"></i></span>分享</li>
+					</ul>
+					<span class="newsTriangle">
+						<i class="iconfont icon-sanjiao2"></i>
+					</span>
+				</div>
+			</span>
+			<!-- 分享信息 -->
+			<div style="display: none;">
+				<p class="heading">分享内容：</p>
+				<textarea id="sharecontent" rows="3">http://www.zhnslm.cn</textarea>
+				<div id="output">
+				Share模块管理客户端的社交分享功能，提供调用终端社交软件的分享能力。通过plus.share可获取社交分享管理对象。
+				</div>
+				
+				<!-----------后期更改----------->
+				<img id="pic" src="../img/add.png"/>
+				<p class="heading">链接地址：</p>
+				<input id="sharehref" class="sharehref" type="url" value="http://www.dcloud.io/" placeholder="请输入要分享的链接地址"/>
+				<p class="heading">链接标题：</p>
+				<input id="sharehrefTitle" class="sharehref" type="text" value="DCloud HBuilder-做最好的HTML5开发工具" placeholder="请输入要分享的链接标题"/>
+				<p class="heading">链接描述：</p>
+				<input id="sharehrefDes" class="sharehref" type="text" value="我正在使用HBuilder+HTML5开发移动应用，赶紧跟我一起来体验！" placeholder="请输入要分享的链接描述"/>
+			</div>
+		</header>
+		<div class="typePage" id="fruitPage">
+			<!-- 搜索 -->
+			<section class="shopSearch">
+				<div class="mui-input-row mui-search">
+					<input type="search" class="mui-input-clear" placeholder="">
+				</div>
+			</section>
+			<!-- 导航 -->
+			<nav class="tabs" id="shopListNav">
+				<ul>
+					<li><p id="fruitBtn"><i class="iconfont icon-shuiguo"></i>水果</p></li>
+					<li><p id="vegetableBtn"><i class="iconfont icon-miaoxiansheng"></i>蔬菜</p></li>
+					<li><p id="rqBtn"><i class="iconfont icon-shengxianshuiguo"></i>肉禽</p></li>
+					<li><p id="cerealsBtn"><i class="iconfont icon-shipin"></i>五谷杂粮</p></li>
+				</ul>
+			</nav>
+			<div id="contain">
+				<!-- 水果 -->
+				<div class="listContent" id="firstcontain">			
+					<section class="shopBanner">
+						<div class="mui-slider">
+						  <div class="mui-slider-group mui-slider-loop">
+						    <!--支持循环，需要重复图片节点-->
+						    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../../images/banner4.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner1.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner2.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner3.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner4.png" /></a></div>
+						    <!--支持循环，需要重复图片节点-->
+						    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../../images/banner1.png" /></a></div>
+						  </div>
+						</div>
+					</section>
+					<ul>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/shopList.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/shopList.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/shopList.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/shopList.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- 蔬菜 -->
+				<div class="listContent" id="secondcontain">			
+					<section class="shopBanner">
+						<div class="mui-slider">
+						  <div class="mui-slider-group mui-slider-loop">
+						    <!--支持循环，需要重复图片节点-->
+						    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../../images/banner4.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner1.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner2.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner3.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner4.png" /></a></div>
+						    <!--支持循环，需要重复图片节点-->
+						    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../../images/banner1.png" /></a></div>
+						  </div>
+						</div>
+					</section>
+					<ul>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/vegetableList.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/vegetableList.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/vegetableList.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/vegetableList.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- 肉禽 -->
+				<div class="listContent" id="thirdcontain">			
+					<section class="shopBanner">
+						<div class="mui-slider">
+						  <div class="mui-slider-group mui-slider-loop">
+						    <!--支持循环，需要重复图片节点-->
+						    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../../images/banner4.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner1.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner2.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner3.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner4.png" /></a></div>
+						    <!--支持循环，需要重复图片节点-->
+						    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../../images/banner1.png" /></a></div>
+						  </div>
+						</div>
+					</section>
+					<ul>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/RQ.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/RQ.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/RQ.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/RQ.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- 五谷杂粮 -->
+				<div class="listContent" id="forthcontain">			
+					<section class="shopBanner">
+						<div class="mui-slider">
+						  <div class="mui-slider-group mui-slider-loop">
+						    <!--支持循环，需要重复图片节点-->
+						    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../../images/banner4.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner1.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner2.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner3.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="../../images/banner4.png" /></a></div>
+						    <!--支持循环，需要重复图片节点-->
+						    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../../images/banner1.png" /></a></div>
+						  </div>
+						</div>
+					</section>
+					<ul>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/cereals.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/cereals.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/cereals.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<div class="shopPic">
+									<img src="../../images/fruit/cereals.webp"/>
+								</div>
+								<p>苹果是一种很好的水果，酸甜可口。含有丰富的维生素和各种营养物质。老少皆宜！</p>
+								<div class="priceAndShoppingcart">
+									<span id="shopPrice">￥66.66</span>
+									<span id="shoppingCart">加入购物车</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>		
+		<!-- js -->
+		<script src="../../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/fruit/fruit.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/share.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/immersed.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

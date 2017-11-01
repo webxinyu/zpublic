@@ -1,0 +1,9 @@
+header>span {
+	height: 44px;
+	line-height: 44px;
+	width: 30px;
+	color: #333;
+}
+header>span .iconfont {
+	font-size: 24px;
+}

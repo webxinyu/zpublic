@@ -1,0 +1,440 @@
+{
+  "index.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/index.css",
+      "fonts/mui.ttf",
+      "js/iconfont.js",
+      "css/iconfont.css",
+      "images/banner1.png",
+      "images/banner2.png",
+      "images/banner4.png",
+      "images/banner3.png",
+      "images/index/theme.jpg",
+      "images/index/hottwo01.png",
+      "images/index/hotthree03.png",
+      "images/index/hotthree01.png",
+      "images/index/hotthree02.png",
+      "images/index/hottwo02.png",
+      "images/index/preferredFruit.png",
+      "images/index/preferredFruitSmall.png",
+      "images/index/floor-tit.png",
+      "images/index/preferredFruitTitle.jpg",
+      "images/index/preferredFruitads.jpg",
+      "images/index/delicateVegetables.jpg",
+      "images/index/cereals.jpg",
+      "images/index/agritourism.jpg",
+      "images/index/preferredFruitads04.jpg",
+      "images/index/preferredFruitads02.jpg",
+      "images/index/preferredFruitads03.jpg",
+      "images/index/delicateVegetablesSmall.png",
+      "images/index/delicateVegetables.png",
+      "images/index/celealsSmall.png",
+      "images/index/celeals.png",
+      "images/index/microShow.jpg",
+      "images/index/microShow02.png",
+      "images/index/microShow01.png",
+      "js/index.js",
+      "qrcode.html",
+      "html/home/home.html",
+      "home.html",
+      "find.html",
+      "tab-webview-subpage-about.html",
+      "css/footer.css"
+    ],
+    "refer": [
+      "qrcode.html",
+      "html/qrcode.html",
+      "html/barcode_scan.html",
+      "html/news/newsHome.html",
+      "html/fruit/fruitIndex.html",
+      "html/localInformation/localInformation.html",
+      "html/microShow/microShow.html",
+      "html/home/home.html",
+      "home.html",
+      "find.html",
+      "orders.html",
+      "tab-webview-subpage-about.html",
+      "tab-webview-subpage-setting.html",
+      "tab-webview-subpage-chat.html",
+      "tab-webview-subpage-contact.html",
+      "html/home/subpage/currency/guide.html"
+    ]
+  },
+  "qrcode.html": {
+    "resources": [
+      "js/index.js",
+      "index.html",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "index.html"
+    ]
+  },
+  "html/qrcode.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "html/res/doc.js",
+      "html/res/doc.css",
+      "html/res/prettify.js",
+      "html/res/prettify.sons.css",
+      "js/common.js",
+      "js/immersed.js"
+    ],
+    "refer": [
+      "html/barcode_scan.html"
+    ]
+  },
+  "html/barcode_scan.html": {
+    "resources": [
+      "js/common.js"
+    ],
+    "refer": []
+  },
+  "html/news/newsHome.html": {
+    "resources": [
+      "js/iconfont.js",
+      "js/mui.min.js",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "css/news/news.css",
+      "images/index/hottwo01.png",
+      "images/index/delicateVegetables.png",
+      "images/index/hottwo02.png",
+      "js/common.js"
+    ],
+    "refer": [
+      "html/news/calendar.html",
+      "html/news/newsContent.html"
+    ]
+  },
+  "html/news/calendar.html": {
+    "resources": [
+      "js/common.js",
+      "js/mui.min.js",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "js/MCalendar.js",
+      "css/MCalendar.css"
+    ],
+    "refer": []
+  },
+  "html/news/newsContent.html": {
+    "resources": [
+      "css/mui.min.css",
+      "images/index/hottwo01.png",
+      "js/iconfont.js",
+      "js/common.js",
+      "js/mui.min.js",
+      "css/iconfont.css",
+      "images/index/delicateVegetables.png",
+      "css/news/news.css",
+      "images/index/hottwo02.png",
+      "images/index/hotthree03.png"
+    ],
+    "refer": []
+  },
+  "html/fruit/fruitIndex.html": {
+    "resources": [
+      "js/iconfont.js",
+      "js/common.js",
+      "js/mui.min.js",
+      "css/fruit/fruitIndex.css",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/immersed.js",
+      "js/share.js",
+      "images/banner1.png",
+      "images/banner2.png",
+      "images/banner4.png",
+      "images/banner3.png",
+      "images/index/hottwo01.png",
+      "images/fruit/shopList.webp",
+      "js/jquery-2.1.1.min.js",
+      "js/fruit/fruit.js",
+      "images/fruit/RQ.webp",
+      "images/fruit/cereals.webp",
+      "images/fruit/vegetableList.webp"
+    ],
+    "refer": [
+      "index.html",
+      "html/news/newsHome.html",
+      "html/news/calendar.html"
+    ]
+  },
+  "html/localInformation/localInformation.html": {
+    "resources": [
+      "js/iconfont.js",
+      "js/common.js",
+      "js/mui.min.js",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "css/localInformation/localInformation.css",
+      "images/index/hottwo01.png",
+      "images/index/delicateVegetables.png",
+      "images/index/hottwo02.png",
+      "js/vue.min.js"
+    ],
+    "refer": [
+      "html/localInformation/detail.html"
+    ]
+  },
+  "html/microShow/microShow.html": {
+    "resources": [
+      "css/microShow/microShow.css",
+      "js/mui.min.js",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/common.js",
+      "images/add.png",
+      "images/index/microShow01.png"
+    ],
+    "refer": []
+  },
+  "html/home/home.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "index.html",
+      "html/home/home_main.html",
+      "css/home/home.css",
+      "css/iconfont.css",
+      "css/footer.css",
+      "fonts/mui.ttf",
+      "images/index/hottwo01.png",
+      "js/mui.pullToRefresh.js",
+      "js/mui.pullToRefresh.material.js"
+    ],
+    "refer": [
+      "index.html",
+      "html/home/home_main.html",
+      "html/home/subpage/setUp.html",
+      "html/news/newsHome.html"
+    ]
+  },
+  "home.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "tab-webview-subpage-about.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "tab-webview-subpage-chat.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "tab-webview-subpage-contact.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "html/home/home_main.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "css/home/home.css",
+      "css/iconfont.css",
+      "images/index/hottwo01.png",
+      "css/footer.css",
+      "fonts/mui.ttf",
+      "js/common.js"
+    ],
+    "refer": [
+      "html/home/subpage/favorite/favorite.html",
+      "html/home/subpage/store.html",
+      "html/home/subpage/myorders/myOrders.html",
+      "html/home/subpage/myInformation/myInformation.html"
+    ]
+  },
+  "html/home/subpage/setUp.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/home/setUp.css",
+      "css/iconfont.css",
+      "js/common.js",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "html/home/subpage/myInformation/myInformation.html",
+      "html/home/subpage/changeingBindings/changingBindings.html",
+      "html/home/subpage/changePassword/changePassword.html",
+      "html/home/subpage/currency/currency.html"
+    ]
+  },
+  "html/home/subpage/myInformation/myInformation.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/iconfont.css",
+      "js/common.js",
+      "js/setAndget.js",
+      "js/immersed.js",
+      "css/common.css"
+    ],
+    "refer": [
+      "html/home/subpage/myInformation/changeTheUserName.html",
+      "html/home/subpage/myInformation/birthday.html",
+      "html/home/subpage/myInformation/headSculpture.html",
+      "html/home/subpage/myInformation/shippingAddress.html"
+    ]
+  },
+  "html/home/subpage/myInformation/changeTheUserName.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/common.js",
+      "js/mui.min.js",
+      "css/iconfont.css",
+      "js/jquery-2.1.1.min.js",
+      "js/setAndget.js"
+    ]
+  },
+  "html/home/subpage/myInformation/birthday.html": {
+    "resources": [
+      "js/mui.picker.min.js",
+      "css/app.css",
+      "css/mui.picker.min.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/common.js",
+      "css/iconfont.css",
+      "js/setAndget.js"
+    ]
+  },
+  "html/home/subpage/myInformation/headSculpture.html": {
+    "resources": [
+      "css/common.css",
+      "js/immersed.js",
+      "js/common.js",
+      "css/iconfont.css"
+    ]
+  },
+  "html/home/subpage/myInformation/shippingAddress.html": {
+    "resources": [
+      "js/common.js",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [
+      "html/home/subpage/myInformation/newAddress.html"
+    ]
+  },
+  "html/home/subpage/myInformation/newAddress.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.picker.min.js",
+      "js/mui.poppicker.js",
+      "js/city.data.js",
+      "js/city.data-3.js",
+      "css/mui.poppicker.css",
+      "css/mui.picker.min.css",
+      "js/common.js"
+    ]
+  },
+  "html/home/subpage/changeingBindings/changingBindings.html": {
+    "resources": [
+      "css/app.css",
+      "css/mui.picker.min.css",
+      "js/common.js",
+      "js/mui.min.js",
+      "css/iconfont.css",
+      "css/mui.min.css"
+    ]
+  },
+  "html/home/subpage/changePassword/changePassword.html": {
+    "resources": [
+      "css/app.css",
+      "css/mui.picker.min.css",
+      "css/mui.min.css",
+      "js/common.js",
+      "js/mui.min.js",
+      "js/jquery-2.1.1.min.js",
+      "css/iconfont.css",
+      "js/md5.js"
+    ]
+  },
+  "html/home/subpage/currency/currency.html": {
+    "resources": [
+      "css/feedback.css",
+      "css/app.css",
+      "css/mui.picker.min.css",
+      "js/feedback.js",
+      "js/mui.view.js",
+      "js/mui.min.js",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "html/home/subpage/currency/guide.html"
+    ]
+  },
+  "html/home/subpage/currency/guide.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ]
+  },
+  "html/home/subpage/favorite/favorite.html": {
+    "resources": [
+      "js/jquery-2.1.1.min.js",
+      "js/common.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/mui.picker.min.css",
+      "images/home/cbd.jpg",
+      "images/home/shuijiao.jpg",
+      "images/home/muwu.jpg",
+      "images/home/yuantiao.jpg"
+    ]
+  },
+  "html/home/subpage/store.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/common.js",
+      "images/index/preferredFruit.png",
+      "fonts/mui.ttf",
+      "css/iconfont.css"
+    ]
+  },
+  "html/home/subpage/myorders/myOrders.html": {
+    "resources": [
+      "js/mui.pullToRefresh.js",
+      "js/mui.min.js",
+      "js/mui.pullToRefresh.material.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/iconfont.css"
+    ]
+  },
+  "html/localInformation/detail.html": {
+    "resources": [
+      "html/localInformation/list-to-detail.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "html/localInformation/vue.min.js"
+    ]
+  }
+}

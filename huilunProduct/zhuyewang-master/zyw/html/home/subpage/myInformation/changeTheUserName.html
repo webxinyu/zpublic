@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人信息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../../../../css/iconfont.css"/>
+		<style type="text/css">
+			.setUpHeader {
+				height: 45px;
+				border-bottom: 1px #c8c7cc solid;
+				background: #fff;
+				display: flex;
+				margin-bottom: 17px;
+			}
+			.setUpHeader>span {
+				height: 44px;
+				line-height: 44px;
+				text-align: center;
+			}
+			.setUpHeader>span:nth-of-type(1), {
+				flex: 1;
+			}
+			.setUpHeader>span:nth-of-type(2) {
+				flex: 2;
+			}
+			.setUpHeader>span:nth-of-type(1)>.iconfont {
+				font-size: 24px;
+			}
+			.setUpHeader>span:nth-of-type(3) {
+				flex: 5;
+			}
+			section {
+				padding: 0px 17px;
+			}
+			section>p:nth-of-type(1) {
+				color: #333;
+			}
+			section>p:nth-of-type(2)>input {
+				color: #333;
+				outline: none;
+				border: none;
+				border-bottom: 1px #2AC845 solid;
+				background: rgba(0,0,0,0);
+			}
+			section>p:nth-of-type(4)>input {
+				width: 100%;
+				height: 40px;
+				background: #2AC845;
+				color: #fff;
+				font-size: 18px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="setUpHeader">
+			<span onclick="back()"><i class="iconfont icon-fanhui1"></i></span>
+			<span>个人信息</span>
+			<span></span>
+		</header>
+		<section>
+			<p>用户名：</p>
+			<p><input type="text" class="mui-input-clear" placeholder="请输入用户名" autofocus="autofocus"></p>
+			<p>以中文或英文字母开头，限4-16个字符，一个汉字为两个字符</p>
+			<p><input type="button" name="" id="makeSureNewName" value="确定" /></p>
+		</section>		
+	</body>
+	<script src="../../../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../js/setAndget.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var toNicknameValue = null;
+		mui.plusReady(function(){
+			var self = plus.webview.currentWebview();
+			var name = self.name;
+			toNicknameValue = name;
+		});
+		/* 输入表单自动获取焦点事件 */
+		var nativeWebview, imm, InputMethodManager;
+		var initNativeObjects = function() {
+		    if (mui.os.android) {
+		        var main = plus.android.runtimeMainActivity();
+		        var Context = plus.android.importClass("android.content.Context");
+		        InputMethodManager = plus.android.importClass("android.view.inputmethod.InputMethodManager");
+		        imm = main.getSystemService(Context.INPUT_METHOD_SERVICE);
+		    } else {
+		        nativeWebview = plus.webview.currentWebview().nativeInstanceObject();
+		    }
+		};
+		var showSoftInput = function() {
+		    var nativeWebview = plus.webview.currentWebview().nativeInstanceObject();
+		    if (mui.os.android) {
+		        //强制当前webview获得焦点
+		        plus.android.importClass(nativeWebview);
+		        nativeWebview.requestFocus();
+		        imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
+		    } else {
+		        nativeWebview.plusCallMethod({
+		            "setKeyboardDisplayRequiresUserAction": false
+		        });
+		    }
+		    setTimeout(function() {
+		       //此处可写具体逻辑设置获取焦点的input
+		       $(".mui-input-clear").val(toNicknameValue);
+		       var inputElem = document.querySelector('input');
+		            inputElem.focus(); 
+		    }, 200);
+		};
+		mui.plusReady(function() {
+			initNativeObjects();
+			showSoftInput();
+		});
+		
+		$("#makeSureNewName").click(function(){
+			if ($(".mui-input-clear").val().length < 4 || $(".mui-input-clear").val().length > 16) {
+				//mui.alert("请输入4-16位字符！");
+				plus.nativeUI.toast("请输入4-16位字符！",{duration:"long"});
+			}else if(RegName.test($(".mui-input-clear").val()) == false){
+				//mui.alert("必须以字母或汉字开头！");
+				plus.nativeUI.toast("必须以字母或汉字开头！",{duration:"long"});
+			}else {
+				var valueName = $(".mui-input-clear").val();
+				//console.log(valueName);
+				set("newUserName", valueName);
+				back();
+			}
+			
+		});
+		var RegName = /^[a-zA-Z\u4e00-\u9fa5][a-zA-Z0-9\u4e00-\u9fa5]*$/;
+	</script>
+</html>

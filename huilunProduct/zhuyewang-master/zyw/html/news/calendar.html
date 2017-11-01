@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../../js/mui.min.js"></script>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css"/>
+		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div class="mui-content">
+			<div id="container"></div>
+			<div id="show-time"></div>
+		</div>
+			<link href="../../css/MCalendar.css" rel="stylesheet" />
+			<script src="../../js/MCalendar.js"></script>
+			<script>
+				var test = function() {
+					var today = mui.DateUtil.addDate(mui.DateUtil.getToday(), 0);
+					var MC = mui("#container").MCalendar({
+						date: today
+					});
+
+					mui("#btn-confirm").each(function() {
+						this.addEventListener('tap', function() {
+							mui("#show-time")[0].innerHTML = MC.getDate().toString();
+						})
+					})
+					mui("#btn-today").each(function() {
+						this.addEventListener('tap', function() {
+							MC.changeDate(new Date())
+						})
+					})
+
+				};
+
+				mui.plusReady(test)
+			</script>
+	</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的收货地址</title>
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../../../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../../../css/iconfont.css"/>
+		<link href="../../../../css/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../../../css/mui.poppicker.css" rel="stylesheet" />
+		<style type="text/css">
+			html,body{
+				background: #F1F1F1;
+			}
+			ul,li {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			.setUpHeader {						/* 头部 */
+				height: 45px;
+				border-bottom: 1px #c8c7cc solid;
+				background: #fff;
+				display: flex;
+			}
+			.setUpHeader>span {
+				height: 44px;
+				line-height: 44px;
+				text-align: center;
+			}
+			.setUpHeader>span:nth-of-type(1), {
+				flex: 1;
+			}
+			.setUpHeader>span:nth-of-type(2) {
+				flex: 2;
+			}
+			.setUpHeader>span:nth-of-type(1)>.iconfont {
+				font-size: 24px;
+			}
+			.setUpHeader>span:nth-of-type(3) {
+				flex: 2;
+			}
+			.setUpHeader>span:nth-of-type(4) {
+				flex: 1;
+			}				
+			.defaultAddress {						/* 底部 */
+				
+			}
+			.addressCotain {						/* 收货地址信息列表 */
+				background: #fff;
+				margin-bottom: 17px;
+			}
+			.addressCotain>ul {
+				padding-left: 10px;
+				border-bottom: 1px #ccc solid;
+			}
+			.addressCotain>ul li {
+				height: 45px;
+				display: flex;
+				border-bottom: 1px #eee solid;
+			}
+			.addressCotain>ul li:last-of-type {
+				border-bottom: 1px #fff solid;
+			}
+			.addressCotain>ul li>span {
+				flex: 1;
+				height: 45px;
+				line-height: 45px;
+				font-size: 15px;
+			}
+			.addressCotain>ul li>p {
+				flex: 7;
+			}
+			.addressCotain>ul li>p>input {
+				margin-bottom: 0;
+				border: none;
+				outline: none;
+				font-size: 14px;
+				color: #333;
+			}
+			.defaultAddress {
+				padding: 0 10px;
+				height: 40px;
+				line-height: 40px;
+				position: relative;
+			}
+			.defaultAddress>input {
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				top: 50%;
+				margin-top: -8px;
+			}
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="setUpHeader">
+			<span onclick="back()"><i class="iconfont icon-fanhui1"></i></span>
+			<span>我的收货地址</span>
+			<span></span>
+			<span id="saveAddress">保存</span>
+		</header>
+		<!-- 内容区 -->
+		<section class="addressCotain">
+			<ul>
+				<li>
+					<span>姓名</span>
+					<p><input type="text" name="addressName" id="addressName" value="" placeholder="最少两个，最多15个字" /></p>
+				</li>
+				<li>
+					<span>电话</span>
+					<p><input type="text" name="addressTell" id="addressTell" value="" placeholder="不少于七位" /></p>
+				</li>
+				<li>
+					<span>地区</span>
+					<p><input type="text" name="addressArea" id="addressArea" value="" placeholder="省份 城市 县区" /></p>
+				</li>
+				<li>
+					<span>地址</span>
+					<p><input type="text" name="addressAddress" id="addressAddress" value="" placeholder="最少5个，最多60个字，不能全部为数字" /></p>
+				</li>
+				<li>
+					<span>邮编</span>
+					<p><input type="text" name="addressNameZipCode" id="addressNameZipCode" value="" placeholder="6位邮政编码" /></p>
+				</li>
+			</ul>
+		</section>
+		<footer class="defaultAddress">
+			<input type="checkbox" name="" id="checkedDefultAddress" value="" />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置为默认收货地址
+		</footer>
+	</body>
+	<script src="../../../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../js/mui.picker.min.js"></script>
+	<script src="../../../../js/mui.poppicker.js"></script>
+	<script src="../../../../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var regName = /^[u4e00-u9fa5·0-9A-z]+$/					//姓名验证
+		var regTell = /(^(\d{3,4}-)?\d{7,8})$|(13[0-9]{9})/ 	//电话号和手机号验证
+		var regNamber = /\d/									//地址验证
+		var regZipCode = /^[1-9][0-9]{5}$/						//邮政编码
+		var addressName,			//姓名
+			addressTell,			//电话
+			addressArea,			//地区
+			addressAddress,			//地址
+			addressNameZipCode,		//邮编			
+			addressNameval,				//姓名结果
+			addressTellval,				//电话结果
+			addressAreaval,				//地区结果
+			addressAddressval,			//地址结果
+			addressNameZipCodeval,		//邮编结果
+			saveAddress					//保存按钮
+		addressName = document.getElementById("addressName");
+		addressTell = document.getElementById("addressTell");
+		addressArea = document.getElementById("addressArea");
+		addressAddress = document.getElementById("addressAddress");
+		addressNameZipCode = document.getElementById("addressNameZipCode");
+
+		addressName.onblur = function(){
+			addressNameval = document.getElementById("addressName").value;
+			if (!regName.test(addressNameval)) {
+				plus.nativeUI.toast("请输入汉字或英文姓名",{duration:"long"});
+			}
+		}
+		addressTell.onblur = function(){
+			addressTellval = document.getElementById("addressTell").value;
+			if (!regTell.test(addressTellval)) {
+				plus.nativeUI.toast("请输入正确电话号或手机号",{duration:"long"});
+			}
+		}
+		addressAddress.onblur = function(){
+			addressAddressval = document.getElementById("addressAddress").value;
+			if (!regNamber.test(addressAddressval)) {
+				plus.nativeUI.toast("地址不能全为数字",{duration:"long"});
+			}
+		}
+		addressNameZipCode.onblur = function(){
+			addressNameZipCodeval = document.getElementById("addressNameZipCode").value;
+			if (!regZipCode.test(addressNameZipCodeval)) {
+				plus.nativeUI.toast("请输入正确的邮政编码",{duration:"long"});
+			}
+		}
+		saveAddress = document.getElementById("saveAddress");
+		saveAddress.onclick = function(){
+			//保存本地，后期添加后台交互
+			
+		}
+		
+	</script>
+	<script type="text/javascript">
+		/* 城市选择器 */
+		(function($, doc) {
+				$.init();
+				$.ready(function() {
+					/**
+					 * 获取对象属性的值
+					 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+					 * @param {Object} obj 对象
+					 * @param {String} param 属性名
+					 */
+					var _getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+					
+					//-----------------------------------------
+					//					//级联示例
+					var cityPicker3 = new $.PopPicker({
+						layer: 3
+					});
+					cityPicker3.setData(cityData3);
+					var showCityPickerButton = doc.getElementById('addressArea');
+					var addressArea = doc.getElementById('addressArea');
+					showCityPickerButton.addEventListener('tap', function(event) {
+						cityPicker3.show(function(items) {
+							addressArea.value =_getParam(items[0], 'text') + " " + _getParam(items[1], 'text') + " " + _getParam(items[2], 'text');
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+				});
+			})(mui, document);
+	</script>
+</html>
